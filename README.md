@@ -1,5 +1,6 @@
-# Ears Compatibility Resource Pack
+# EnchantIcon Compatibility Resource Pack
 Resource pack to make different mods compatible with EnchantIcon. Feel free to contribute textures.
+Run genModels.py to automatically create model files for each texture.
 
 Currently supports:
 | Mod Name | Link | Complete? | Notes |
