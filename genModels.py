@@ -1,6 +1,7 @@
 import glob
 import os
 import re
+from pathlib import Path
 
 print('Model generator for EnchantIconCompat')
 
@@ -26,8 +27,10 @@ for p in pngs:
         print("Skipped " + enchantNamespace + ":" + enchantName + " because it was in unsorted folder")
     if(not skip):
         print("Enchantment ID is " + enchantNamespace + ":" + enchantName)
+        modelFileDir = model_dir + "\\" + enchantNamespace
         modelFilePath = model_dir + "\\" + enchantNamespace + "\\" + enchantName + ".json"
-        f = open(modelFilePath, "w")
+        Path(modelFileDir).mkdir(parents=True, exist_ok=True)
+        f = open(modelFilePath, "w+")
         modelFileContents = "{\"parent\": \"minecraft:item/generated\", \"textures\": {\"layer0\": \"enchant_icon:enchant_icon/" + enchantNamespace + "/" + enchantName + "\"}}"
         f.write(modelFileContents)
         f.close()
